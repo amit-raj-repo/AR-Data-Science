@@ -1,4 +1,4 @@
-# ADA Boost Explained
+# ADABoost Algorithm Explained
 ---
 
 ## Overview
