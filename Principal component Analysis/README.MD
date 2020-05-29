@@ -1,4 +1,4 @@
-#Principal Component Analysis (PCA) Explained:
+Principal Component Analysis (PCA) Explained:
 ---
 
 ***Step 1:*** Say we have 2 columns and 50 observations. We will plot these 2 columns and measure the average for variable 1 and same for variable 2 (Just assume variable 1 is at x axis and variable 2 on y axis). 
