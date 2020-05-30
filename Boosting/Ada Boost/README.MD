@@ -9,6 +9,8 @@ AdaBoost is one of the first boosting algorithms to be adapted in solving practi
 
 * Based on the variables we have, the algorithm creates various decision stumps i.e. 1 node and 2 leaves. This is basically a forest of stumps. As stumps can use only 1 variable to make decisions, they are technically weak learners.
 
+<img src=https://github.com/amit-raj-repo/Data-Science/blob/master/Boosting/Resources/adaboost/Ada%20Boost/01-stump.png width="500" height ="200">
+
 * Unlike random forest where each tree has equal vote weight in final decision, some stumps have higher weight in making a decision in AdaBoost
 
 * In RF each tree is independent of each other while in AdaBoost errors by 1st stump influences the errors in 2nd stump and so on
@@ -17,18 +19,29 @@ AdaBoost is one of the first boosting algorithms to be adapted in solving practi
 
 ***Step1:*** Before the algorithm starts, we need to assign weights to the samples. If we have 10K records, the weight for the 1st pass will be same for each sample/record i.e. 1/10K. This means in the 1st pass all samples are equally important
 
+<img src=https://github.com/amit-raj-repo/Data-Science/blob/master/Boosting/Resources/adaboost/Ada%20Boost/03-Stump.png width="500" height ="200">
+
 ***Step2:*** Now we travers through all variables and make decision stumps, 15 variables means 15 different stumps. If any column is numeric, we will search for the value with min error. Post this we calculate the Gini index for each stump. The stump with minimum Gini value will be the 1st stump in the forest.
 
+<img src=https://github.com/amit-raj-repo/Data-Science/blob/master/Boosting/Resources/adaboost/Ada%20Boost/04-Gini.png width="800" height ="200">
+
 ***Step3:*** After deciding the 1st stump, we need to decide the say of this stump in final classification, remember some stumps have more say than others. The say for a stump is decided based on the formula below:Amount of say = 0.5 * log(1-Total Error / Total Error)
+
+<img src=https://github.com/amit-raj-repo/Data-Science/blob/master/Boosting/Resources/adaboost/Ada%20Boost/05-Amount_of_say.png width="400" height ="75">
 
 Here, Total Error is the sum of weights of the samples that the stump got wrong. E.g. in the above example there were 10K samples, each of the weight 1/10K and say the best stump made 2500 errors then the total error will be 2500/10000 = 0.25 and the amount of say will be ~0.23. The amount of say can take positive as well as negative values. -ve values say not of the event.
 
 ***Step4:*** Now we need to modify the sample weights so that next stump can take into account the learning from this stump. For the samples which are incorrectly identified, we'll increase the weight and for correctly identified sample we'll reduce the weight. The new weight for incorrectly identified samples would be:Weight for incorrectly identified = old sample weight * e^ amount of say
 1/10K * e^0.23 = 0.0001 * 1.258
 
+<img src=https://github.com/amit-raj-repo/Data-Science/blob/master/Boosting/Resources/adaboost/Ada%20Boost/06-Sample_weight_update.png width="500" height ="75">
+
 If the previous stump did a good job then amount of say will be higher which means the new sample weight will be much higher for incorrectly identified but if the stump did not do well, the new sample weight will have only marginal changes.
 
+<img src=https://github.com/amit-raj-repo/Data-Science/blob/master/Boosting/Resources/adaboost/Ada%20Boost/07-Sample_weight_update_2.png width="500" height ="75">
+
 Weight for correctly identified = old sample weight * e^ - (amount of say)
+
 
 ***Step5:*** Now the sample weights are updated but if the sample weights should add to 1 so we normalize the new weights by dividing each value with the sum of weights.
 
@@ -38,3 +51,4 @@ Weight for correctly identified = old sample weight * e^ - (amount of say)
 
 ***Step7:*** Finally after making all the stumps, we sum the amount of say of each stump for that sample, if the sum of amount of say for 1 is higher than that of 0 then we classify it as 1.
  
+ <img src=https://github.com/amit-raj-repo/Data-Science/blob/master/Boosting/Resources/adaboost/Ada%20Boost/08-%20Final%20Decision.jpg width="500" height ="200">
