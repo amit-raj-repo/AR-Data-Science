@@ -11,7 +11,7 @@ AdaBoost is one of the first boosting algorithms to be adapted in solving practi
 
 * Unlike random forest where each tree has equal vote weight in final decision, some stumps have higher weight in making a decision in AdaBoost
 
-* In RF each tree is independent of each other while in AdaBoost errors by 1st stump  influences by errors in 2nd stump and so on
+* In RF each tree is independent of each other while in AdaBoost errors by 1st stump influences the errors in 2nd stump and so on
 
 ## AdaBoost Steps for Classification: 
 
