@@ -1,3 +1,5 @@
+<meta name="Description" content="Ada Boost Algorithm Theory. This will help you in understanding AdaBoost step by step">
+
 # ADABoost Algorithm Explained
 ---
 
