@@ -3,7 +3,7 @@
 
 ## Overview:
 
-Gradient boosting is used both for classification and regression(the approaches differ significantly). The Gradient boost creates a lot of weak lerners(small decision tress) in order to correctly classify the data in hand. It uses logit function in calculation for probability(please ensure you've read about logit function). Finlly, below are the steps Gradient boost follows to learn to predict a class
+Gradient boosting is used both for classification and regression(the approaches differ significantly). The Gradient boost creates a lot of weak learners(small decision tress) in order to correctly classify the data in hand. It uses logit function in calculation for probability(please ensure you've read about logit function). Finally, below are the steps Gradient boost follows to learn to predict a class
 
 ***Step1:*** Taking the complete data and calculating the log(odds) say there are 60 observations and out of which 40 are true/1 and 20 are false/0 so the log of odds will be log(40/20) = 0.693147180559945 or ~0.7
 
