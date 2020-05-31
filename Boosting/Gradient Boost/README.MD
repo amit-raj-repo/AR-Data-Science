@@ -1,6 +1,10 @@
 # Gradient Boosting Alorithm Explained
 ---
 
+## Overview:
+
+Gradient boosting is used both for classification and regression(the approaches differ significantly). The Gradient boost creates a lot of weak lerners(small decision tress) in order to correctly classify the data in hand. It uses logit function in calculation for probability(please ensure you've read about logit function). Finlly, below are the steps Gradient boost follows to learn to predict a class
+
 ***Step1:*** Taking the complete data and calculating the log(odds) say there are 60 observations and out of which 40 are true/1 and 20 are false/0 so the log of odds will be log(40/20) = 0.693147180559945 or ~0.7
 
 ***Step2:*** After calculating the log odds, we put the value in a logit function and calculate the probability, say we get the probability value as 0.6. In all the ML algorithms, 0.5 is considered as threshold to classify records as 1 or 0. Here, since our probability is 0.6, we mark all records as 1 or true.
@@ -12,8 +16,8 @@
 ***Step5:*** After calculating the probabilities and making a tree, we calculate output value of each leaf. This is done using the formula: 
 					
           
-             sum(Residuals in the leaf)
-		=================================================
+             			sum(Residuals in the leaf)
+		    ===========================================================
 			Sum(Previous Probability * (1- Previous Probability)
 
 
