@@ -26,7 +26,7 @@ Formula for Gini Index =
 
 *** Step1: *** Calculate gini index for all the variables present in the dataset
 
-<img width="800" height="400" src="https://github.com/amit-raj-repo/Data-Science-Python/blob/master/Machine%20Learning/Resources/DT-2.png">
+<img width="700" height="400" src="https://github.com/amit-raj-repo/Data-Science-Python/blob/master/Machine%20Learning/Resources/DT-2.png">
 
 *** Step2: *** The 1st split will be according to the variable with minimum gini index
 
