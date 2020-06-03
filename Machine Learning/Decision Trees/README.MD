@@ -6,7 +6,7 @@ A decision tree is a graphical representation of possible solutions to a decisio
 
 There are 3 main parts of the tree
 - Root Node: First decision point or root of the tree
-- Internal Nodes: Node is something which has splits can also, either more nodes or leaves
+- Internal Nodes: Node is something which has splits, it can either split into nodes or leaves
 - Leaf: Leaf is the last decision point i.e. we cannot break down the rules further
 
 <p align="center">
@@ -24,16 +24,12 @@ Formula for Gini Index =
 
 ## Steps followed by decision tree for classification
 
-*** Step1: *** Calculate gini index for all the variables present in the dataset
+***Step1:*** Calculate gini index for all the variables present in the dataset
 
-<img width="700" height="400" src="https://github.com/amit-raj-repo/Data-Science-Python/blob/master/Machine%20Learning/Resources/DT-2.png">
+***Step2:*** The 1st split will be according to the variable with minimum gini index
 
-*** Step2: *** The 1st split will be according to the variable with minimum gini index
+***Step3:*** Now, for every node calculate the gini index again for all variables as well as independent leaf
 
-<img width="800" height="400" src="https://github.com/amit-raj-repo/Data-Science-Python/blob/master/Machine%20Learning/Resources/DT-3.png">
+***Step4:*** If the gini score for the node itself is the lowest score, we don't need to split it further and it can become a leaf node else pick the variable with minimum/lowest impurity value
 
-*** Step3: *** Now, for every node calculate the gini index again for all variables as well as independent leaf
-
-*** Step4: *** If the gini score for the node itself is the lowest score, we don't need to split it further and it can become a leaf node else pick the variable with minimum/lowest impurity value
-
-*** Step5: *** The process continues till we reach the ending criteria either min samples per leaf or max depth etc
+***Step5:*** The process continues till we reach the ending criteria either min samples per leaf or max depth etc
